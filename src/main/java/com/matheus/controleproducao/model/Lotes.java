@@ -5,6 +5,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+
 
 @Entity
 public class Lotes extends Products {
@@ -21,8 +24,15 @@ public class Lotes extends Products {
     private PreMescla premescla;
     
     private String lote;
+
+    @ManyToOne
+    @JoinColumn(name = "moinho_id")
     private Moinho moinho;
+
     private double carga;
+    
+    @ManyToOne
+    @JoinColumn(name = "pigmento_id")
     private Pigmento pigmento;
     private int revisao;
 

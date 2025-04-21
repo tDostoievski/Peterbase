@@ -1,9 +1,13 @@
 package com.matheus.controleproducao.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Pigmento {
@@ -15,6 +19,8 @@ public class Pigmento {
     private int codigo;
     private String lote;
 
+    @OneToMany(mappedBy="pigmento")
+    private final List<Lotes> lotes = new ArrayList<>();
 
     public Pigmento (){
 
@@ -27,6 +33,10 @@ public class Pigmento {
     
     public Long getId() {
         return id;
+    }
+
+    public List<Lotes> getLotes() {
+        return lotes;
     }
 
     public int getCodigo (){
