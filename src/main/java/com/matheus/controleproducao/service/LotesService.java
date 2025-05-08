@@ -1,3 +1,4 @@
+/* 
 package com.matheus.controleproducao.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,3 +17,5 @@ public class LotesService {
         lotesRepository.save(lote);
     }
 }
+
+*/

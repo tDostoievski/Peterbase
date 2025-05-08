@@ -1,14 +1,13 @@
 /home/dostoievski/repos/Peterbase/src/main/java/com/matheus/controleproducao/Main.java
-/home/dostoievski/repos/Peterbase/src/main/java/com/matheus/controleproducao/controller/HelloWorldController.java
-/home/dostoievski/repos/Peterbase/src/main/java/com/matheus/controleproducao/controller/LotesController.java
+/home/dostoievski/repos/Peterbase/src/main/java/com/matheus/controleproducao/controller/CadastroProdutosController.java
+/home/dostoievski/repos/Peterbase/src/main/java/com/matheus/controleproducao/controller/LotesFormularyController.java
+/home/dostoievski/repos/Peterbase/src/main/java/com/matheus/controleproducao/controller/MainController.java
 /home/dostoievski/repos/Peterbase/src/main/java/com/matheus/controleproducao/javafx/JavaFxApp.java
 /home/dostoievski/repos/Peterbase/src/main/java/com/matheus/controleproducao/model/Data.java
 /home/dostoievski/repos/Peterbase/src/main/java/com/matheus/controleproducao/model/Lotes.java
-/home/dostoievski/repos/Peterbase/src/main/java/com/matheus/controleproducao/model/Mescla.java
 /home/dostoievski/repos/Peterbase/src/main/java/com/matheus/controleproducao/model/Moinho.java
 /home/dostoievski/repos/Peterbase/src/main/java/com/matheus/controleproducao/model/ParametrosDispersao.java
 /home/dostoievski/repos/Peterbase/src/main/java/com/matheus/controleproducao/model/Pigmento.java
-/home/dostoievski/repos/Peterbase/src/main/java/com/matheus/controleproducao/model/PreMescla.java
 /home/dostoievski/repos/Peterbase/src/main/java/com/matheus/controleproducao/model/Products.java
 /home/dostoievski/repos/Peterbase/src/main/java/com/matheus/controleproducao/repository/LotesRepository.java
 /home/dostoievski/repos/Peterbase/src/main/java/com/matheus/controleproducao/repository/MoinhoRepository.java

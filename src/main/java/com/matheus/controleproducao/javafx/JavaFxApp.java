@@ -6,9 +6,10 @@ import org.springframework.context.ConfigurableApplicationContext;
 import com.matheus.controleproducao.Main;
 
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.layout.StackPane;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 
@@ -23,11 +24,15 @@ public class JavaFxApp extends Application{
     }
 
     @Override
-    public void start(Stage primaryStage){
-        StackPane root = new StackPane(new Label("Olá JavaFX + Spring!"));
-        Scene scene = new Scene(root, 400, 200);
+    public void start(Stage primaryStage) throws Exception {
+        Font.loadFont(getClass().getResource("/fonts/inter.ttf").toExternalForm(), 20);
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/templates/mainframe.fxml"));
+        Parent root = loader.load(); 
+        Scene scene = new Scene(root);
         primaryStage.setScene(scene);
-        primaryStage.setTitle("Controle de Produção");
+        primaryStage.setTitle("Menu Principal");
+        scene.getStylesheets().add(getClass().getResource("/templates/stylesheets.css").toExternalForm());
         primaryStage.show();
     }
 

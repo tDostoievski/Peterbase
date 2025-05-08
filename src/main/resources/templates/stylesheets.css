@@ -1,0 +1,26 @@
+
+.root {
+    -fx-font-family: "Inter";
+}
+
+.homeButton {
+    -fx-background-color: null;
+}
+
+
+.homeButton:hover {
+    -fx-background-color: #09a6c2;
+}
+
+.backgroundPage {
+    -fx-background-color: #d9d9d9;
+}
+
+.upbar {
+    -fx-background-color: #09899f;
+}
+
+.pageButton {
+    -fx-background-color: #09899f;
+
+}

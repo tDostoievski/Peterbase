@@ -1,5 +1,8 @@
 package com.matheus.controleproducao.model;
 
+import jakarta.persistence.AttributeOverride;
+import jakarta.persistence.AttributeOverrides;
+import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -19,9 +22,21 @@ public class Lotes extends Products {
     @Embedded
     private Data data;
     @Embedded
-    private Mescla mescla;
+    @AttributeOverrides({
+    @AttributeOverride(name = "velocidade", column = @Column(name = "mescla_velocidade")),
+    @AttributeOverride(name = "tempo", column = @Column(name = "mescla_tempo")),
+    @AttributeOverride(name = "temperatura", column = @Column(name = "mescla_temperatura")),
+    @AttributeOverride(name = "viscosidade", column = @Column(name = "mescla_viscosidade"))
+})
+    private ParametrosDispersao mescla;
     @Embedded
-    private PreMescla premescla;
+    @AttributeOverrides({
+        @AttributeOverride(name = "velocidade", column = @Column(name = "premescla_velocidade")),
+        @AttributeOverride(name = "tempo", column = @Column(name = "premescla_tempo")),
+        @AttributeOverride(name = "temperatura", column = @Column(name = "premescla_temperatura")),
+        @AttributeOverride(name = "viscosidade", column = @Column(name = "premescla_viscosidade"))
+    })
+    private ParametrosDispersao premescla;
     
     private String lote;
 
@@ -30,7 +45,7 @@ public class Lotes extends Products {
     private Moinho moinho;
 
     private double carga;
-    
+
     @ManyToOne
     @JoinColumn(name = "pigmento_id")
     private Pigmento pigmento;
@@ -41,7 +56,7 @@ public class Lotes extends Products {
     }
 
     // Construtor com parâmetros
-    public Lotes(String nome, Data data, String lote, Moinho moinho, double carga, Mescla mescla, PreMescla premescla, Pigmento pigmento, int revisao) {
+    public Lotes(String nome, Data data, String lote, Moinho moinho, double carga, ParametrosDispersao mescla, ParametrosDispersao premescla, Pigmento pigmento, int revisao) {
         super(nome); // chama o construtor da classe Products
         this.data = data;
         this.lote = lote;
@@ -90,19 +105,19 @@ public class Lotes extends Products {
         this.carga = carga;
     }
 
-    public Mescla getMescla() {
+    public ParametrosDispersao getMescla() {
         return mescla;
     }
 
-    public void setMescla(Mescla mescla) {
+    public void setMescla(ParametrosDispersao mescla) {
         this.mescla = mescla;
     }
 
-    public PreMescla getPremescla() {
+    public ParametrosDispersao getPremescla() {
         return premescla;
     }
 
-    public void setPremescla(PreMescla premescla) {
+    public void setPremescla(ParametrosDispersao premescla) {
         this.premescla = premescla;
     }
 
