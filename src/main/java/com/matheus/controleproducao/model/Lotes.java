@@ -13,14 +13,20 @@ import jakarta.persistence.ManyToOne;
 
 
 @Entity
-public class Lotes extends Products {
-
+public class Lotes {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @ManyToOne
+    private Products produto; 
+
+    @Column (unique = true)
+    private String lote;
+
     @Embedded
     private Data data;
+
     @Embedded
     @AttributeOverrides({
     @AttributeOverride(name = "velocidade", column = @Column(name = "mescla_velocidade")),
@@ -29,6 +35,7 @@ public class Lotes extends Products {
     @AttributeOverride(name = "viscosidade", column = @Column(name = "mescla_viscosidade"))
 })
     private ParametrosDispersao mescla;
+
     @Embedded
     @AttributeOverrides({
         @AttributeOverride(name = "velocidade", column = @Column(name = "premescla_velocidade")),
@@ -38,9 +45,13 @@ public class Lotes extends Products {
     })
     private ParametrosDispersao premescla;
     
-    private String lote;
+    @ManyToOne
+    private Panela panela; 
 
     @ManyToOne
+    private Dispersor dispersor; 
+
+    @Embedded
     @JoinColumn(name = "moinho_id")
     private Moinho moinho;
 
@@ -56,10 +67,12 @@ public class Lotes extends Products {
     }
 
     // Construtor com parâmetros
-    public Lotes(String nome, Data data, String lote, Moinho moinho, double carga, ParametrosDispersao mescla, ParametrosDispersao premescla, Pigmento pigmento, int revisao) {
-        super(nome); // chama o construtor da classe Products
+    public Lotes(Products produto, Data data, String lote, Panela panela, Dispersor dispersor, Moinho moinho, double carga, ParametrosDispersao mescla, ParametrosDispersao premescla, Pigmento pigmento, int revisao) {
+        this.produto = produto;
         this.data = data;
         this.lote = lote;
+        this.panela = panela;
+        this.dispersor = dispersor;
         this.moinho = moinho;
         this.carga = carga;
         this.mescla = mescla;
@@ -68,6 +81,9 @@ public class Lotes extends Products {
         this.revisao = revisao;
     }
 
+    public Products getProduto() {
+        return produto;
+    }
     // Getters e Setters
     public Long getId() {
         return id;
@@ -87,6 +103,22 @@ public class Lotes extends Products {
 
     public void setLote(String lote) {
         this.lote = lote;
+    }
+
+    public Panela getPanela() {
+        return panela;
+    }
+
+    public void setPanela(Panela panela) {
+        this.panela = panela;
+    }
+
+    public Dispersor getDispersor() {
+        return dispersor;
+    }
+
+    public void setDispersor(Dispersor dispersor) {
+        this.dispersor = dispersor;
     }
 
     public Moinho getMoinho() {

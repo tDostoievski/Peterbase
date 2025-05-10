@@ -1,31 +1,27 @@
 package com.matheus.controleproducao.model;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import jakarta.persistence.Entity;
+import jakarta.persistence.Column;
+import jakarta.persistence.Embeddable;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 
-@Entity
+@Embeddable
 public class Moinho {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
 
+    @Column (unique = true)
     private String moinho;
+    
     private int rotacaoDoMoinho;
     private int rotacaoBomba;
     private double pressao;
     private int tempo;
     private double vazao;
     private int passadas;
-
-    @OneToMany(mappedBy="moinho")
-    private final List<Lotes> lotes = new ArrayList<>();
 
     public Moinho (){
 
@@ -43,10 +39,6 @@ public class Moinho {
 
     public Long getId() {
         return id;
-    }
-
-    public List<Lotes> getLotes() {
-        return lotes;
     }
 
     // Getters e Setters

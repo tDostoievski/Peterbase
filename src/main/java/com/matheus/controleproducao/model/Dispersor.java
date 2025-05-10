@@ -8,7 +8,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Dispersor {
@@ -18,10 +18,61 @@ public class Dispersor {
 
     @Column(unique = true)
     private int numero;
+
     private float diametroHelice;
     private float potencia;
-    private 
+    private float distanciaMaximaPiso; 
+    private boolean antiexplosao; 
     
-    @ManyToOne
+    @OneToMany
     private final List<Lotes> lotes = new ArrayList<>();
+
+    public Long getId() {
+        return id;
+    }
+    
+    public int getNumero() {
+        return numero;
+    }
+    
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+    
+    public float getDiametroHelice() {
+        return diametroHelice;
+    }
+    
+    public void setDiametroHelice(float diametroHelice) {
+        this.diametroHelice = diametroHelice;
+    }
+    
+    public float getPotencia() {
+        return potencia;
+    }
+    
+    public void setPotencia(float potencia) {
+        this.potencia = potencia;
+    }
+    
+    public float getDistanciaMaximaPiso() {
+        return distanciaMaximaPiso;
+    }
+    
+    public void setDistanciaMaximaPiso(float distanciaMaximaPiso) {
+        this.distanciaMaximaPiso = distanciaMaximaPiso;
+    }
+    
+    public boolean isAntiexplosao() {
+        return antiexplosao;
+    }
+    
+    public void setAntiexplosao(boolean antiexplosao) {
+        this.antiexplosao = antiexplosao;
+    }
+    
+    public List<Lotes> getLotes() {
+        return lotes;
+    }
+    
 }

@@ -9,56 +9,68 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="463.0" prefWidth="703.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="463.0" prefWidth="703.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.matheus.controleproducao.controller.LotesFormularyController">
    <children>
       <VBox layoutY="1.0" prefHeight="457.0" prefWidth="242.0">
          <children>
-            <TextField promptText="Nome">
+            <TextField fx:id="nomeField" promptText="Nome">
                <VBox.margin>
-                  <Insets left="56.0" right="17.0" top="78.0" />
+                  <Insets left="43.0" right="30.0" top="78.0" />
                </VBox.margin>
             </TextField>
-            <TextField promptText="Lote">
+            <TextField fx:id="codigoField" promptText="Codigo">
                <VBox.margin>
-                  <Insets left="56.0" right="17.0" top="16.0" />
+                  <Insets left="43.0" right="30.0" top="16.0" />
+               </VBox.margin>
+            </TextField>
+            <TextField fx:id="loteField" promptText="Lote">
+               <VBox.margin>
+                  <Insets left="43.0" right="30.0" top="16.0" />
                </VBox.margin>
             </TextField>
             <HBox prefHeight="37.0" prefWidth="242.0" spacing="15.0">
                <VBox.margin>
-                  <Insets left="56.0" right="17.0" top="20.0" />
+                  <Insets left="43.0" right="30.0" top="20.0" />
                </VBox.margin>
                <children>
-                  <TextField promptText="Dia">
+                  <TextField fx:id="diaField" promptText="Dia">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
                   </TextField>
-                  <TextField prefWidth="180.0" promptText="Mes" />
-                  <TextField prefWidth="190.0" promptText="Ano" />
+                  <TextField fx:id="mesField" prefWidth="180.0" promptText="Mes" />
+                  <TextField fx:id="anoField" prefWidth="190.0" promptText="Ano" />
                </children>
             </HBox>
-            <TextField promptText="Codigo pigmento">
-               <VBox.margin>
-                  <Insets left="56.0" right="17.0" top="15.0" />
-               </VBox.margin>
-            </TextField>
-            <TextField promptText="Lote pigmento ">
-               <VBox.margin>
-                  <Insets left="56.0" right="17.0" top="16.0" />
-               </VBox.margin>
-            </TextField>
-            <TextField promptText="Revisao">
-               <VBox.margin>
-                  <Insets left="56.0" right="17.0" top="18.0" />
-               </VBox.margin>
-            </TextField>
-            <HBox prefHeight="100.0" prefWidth="200.0" spacing="23.0">
+            <HBox prefHeight="0.0" prefWidth="200.0" spacing="10.0">
                <children>
-                  <TextField prefHeight="26.0" prefWidth="84.0" promptText="Panela" />
-                  <TextField prefHeight="26.0" prefWidth="92.0" promptText="Dispersor" />
+                  <TextField fx:id="codigo_pigmentoField" prefWidth="111.0" promptText="Código pig. " />
+                  <TextField fx:id="cargaField" prefHeight="26.0" prefWidth="50.0" promptText="Carga">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </TextField>
                </children>
                <VBox.margin>
-                  <Insets left="56.0" right="17.0" top="18.0" />
+                  <Insets left="43.0" right="30.0" top="18.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="26.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <TextField fx:id="lote_pigmentoField" prefHeight="26.0" prefWidth="111.0" promptText="Lote pig. " />
+                  <TextField fx:id="revisaoField" prefHeight="26.0" prefWidth="50.0" promptText="Rev" />
+               </children>
+               <VBox.margin>
+                  <Insets left="43.0" right="30.0" top="18.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+               <children>
+                  <TextField fx:id="numeroPanelaField" prefHeight="26.0" prefWidth="84.0" promptText="Panela" />
+                  <TextField fx:id="numeroDispersorField" prefHeight="26.0" prefWidth="92.0" promptText="Dispersor" />
+               </children>
+               <VBox.margin>
+                  <Insets left="43.0" right="30.0" top="18.0" />
                </VBox.margin>
             </HBox>
          </children>
@@ -73,12 +85,12 @@
                   <Insets left="30.0" top="46.0" />
                </VBox.margin>
             </RadioButton>
-            <TextField promptText="Velocidade de dispersão">
+            <TextField fx:id="mescla_viscosidadeField" promptText="Viscosidade">
                <VBox.margin>
                   <Insets left="34.0" right="17.0" top="14.0" />
                </VBox.margin>
             </TextField>
-            <TextField promptText="Lote">
+            <TextField fx:id="mescla_velocidadeField" promptText="Velocidade de dispersao">
                <VBox.margin>
                   <Insets left="34.0" right="17.0" top="16.0" />
                </VBox.margin>
@@ -88,13 +100,12 @@
                   <Insets left="34.0" right="17.0" top="20.0" />
                </VBox.margin>
                <children>
-                  <TextField promptText="Dia">
+                  <TextField fx:id="mescla_temperaturaField" promptText="Temp (°C)">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
                   </TextField>
-                  <TextField prefWidth="180.0" promptText="Mes" />
-                  <TextField prefWidth="190.0" promptText="Ano" />
+                  <TextField fx:id="mescla_tempoField" prefWidth="180.0" promptText="Tempo" />
                </children>
             </HBox>
             <RadioButton contentDisplay="CENTER" mnemonicParsing="false" prefHeight="6.0" prefWidth="152.0" text="Mescla" textFill="#13282c">
@@ -105,21 +116,29 @@
                   <Insets left="30.0" top="21.0" />
                </VBox.margin>
             </RadioButton>
-            <TextField promptText="Codigo pigmento">
+            <TextField fx:id="premescla_viscosidadeField" promptText="Viscosidade">
                <VBox.margin>
-                  <Insets left="34.0" right="17.0" top="20.0" />
+                  <Insets left="34.0" right="17.0" top="26.0" />
                </VBox.margin>
             </TextField>
-            <TextField promptText="Lote pigmento ">
+            <TextField fx:id="premescla_velocidadeField" promptText="Velocidade de dispersao">
                <VBox.margin>
                   <Insets left="34.0" right="17.0" top="16.0" />
                </VBox.margin>
             </TextField>
-            <TextField promptText="Revisao">
+            <HBox prefHeight="37.0" prefWidth="242.0" spacing="15.0">
+               <children>
+                  <TextField fx:id="premescla_temperaturaField" promptText="Temp (°C)">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </TextField>
+                  <TextField fx:id="premescla_tempoFIeld" prefWidth="180.0" promptText="Tempo" />
+               </children>
                <VBox.margin>
-                  <Insets left="34.0" right="17.0" top="18.0" />
+                  <Insets left="34.0" right="17.0" top="16.0" />
                </VBox.margin>
-            </TextField>
+            </HBox>
          </children>
       </VBox>
       <VBox layoutX="449.0" layoutY="4.0" prefHeight="457.0" prefWidth="242.0">
@@ -132,39 +151,43 @@
                   <Insets left="30.0" top="46.0" />
                </VBox.margin>
             </RadioButton>
-            <TextField promptText="Moinho">
+            <TextField fx:id="numero_moinhoField" promptText="Moinho">
                <VBox.margin>
                   <Insets left="34.0" right="17.0" top="14.0" />
                </VBox.margin>
             </TextField>
-            <TextField promptText="Rotação do moinho">
+            <TextField fx:id="rotacao_moinhoField" promptText="Rotação do moinho">
                <VBox.margin>
                   <Insets left="34.0" right="17.0" top="16.0" />
                </VBox.margin>
             </TextField>
-            <TextField promptText="Rotacao da bomba">
+            <TextField fx:id="rotacao_bombaField" promptText="Rotacao da bomba">
                <VBox.margin>
-                  <Insets left="34.0" right="14.0" top="20.0" />
+                  <Insets left="34.0" right="17.0" top="20.0" />
                </VBox.margin>
             </TextField>
-            <TextField promptText="Pressao">
+            <TextField fx:id="pressaoField" promptText="Pressao">
                <VBox.margin>
-                  <Insets left="34.0" right="14.0" top="22.0" />
+                  <Insets left="34.0" right="17.0" top="22.0" />
                </VBox.margin>
             </TextField>
-            <TextField promptText="Vazao">
+            <TextField fx:id="vazaoField" promptText="Vazao">
                <VBox.margin>
-                  <Insets left="34.0" right="14.0" top="22.0" />
+                  <Insets left="34.0" right="17.0" top="22.0" />
                </VBox.margin>
             </TextField>
-            <TextField promptText="Número de passadas">
+            <HBox prefHeight="0.0" prefWidth="200.0" spacing="20.0">
+               <children>
+                  <TextField fx:id="passadasField" prefHeight="26.0" prefWidth="84.0" promptText="Passadas" />
+                  <TextField fx:id="tempo_moinhoField" prefHeight="26.0" prefWidth="92.0" promptText="Tempo" />
+               </children>
                <VBox.margin>
-                  <Insets left="34.0" right="14.0" top="20.0" />
+                  <Insets left="34.0" right="17.0" top="16.0" />
                </VBox.margin>
-            </TextField>
-            <Button mnemonicParsing="false" text="Cadastrar">
+            </HBox>
+            <Button fx:id="cadastrarButton" mnemonicParsing="false" text="Cadastrar">
                <VBox.margin>
-                  <Insets left="73.0" top="33.0" />
+                  <Insets left="85.0" top="20.0" />
                </VBox.margin>
             </Button>
          </children>
